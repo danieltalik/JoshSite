@@ -1,0 +1,59 @@
+            h1{
+				font-family: 'Monoton', cursive;
+				color: Red;
+				text-align:center;
+				font-size: 50px;
+			}
+			h3{
+				font-family: 'Roboto', sans-serif;
+				font-weight:bold;
+				text-align:center;
+			}
+
+			@media only screen and (max-width: 991px) {
+				#tagline {
+					display: none;
+				}
+			}
+			a{
+			    color: inherit;
+			 }
+
+			 a:hover
+             {
+                  color:#00A0C6;
+                  text-decoration:none;
+                  cursor:pointer;
+             }
+			.al{
+			    padding-bottom: 10px;
+			    text-align: center;
+			    align-content: center;
+			}
+			.hz{
+			    padding-right: 10px;
+			    display:inline;
+			}
+
+			.textBorder{
+			  border: 1px solid #ddd;
+              border-radius: 4px;
+              padding: 5px;
+              width:50%;
+              margin: auto;
+            }
+            #centerImage {
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 50%;
+            }
+            #homeImage {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                height: 75%;
+            }
+            .moreInfo{
+                color: #214cea;
+            }
