@@ -46,9 +46,14 @@ public class HomeController {
     }
 
     @RequestMapping("/events")
-    public String events() {
+    public String events(Model model) {
 
         //TODO:Add dropdown for past and current events and set up way to move current events to past events using date utils
+
+        EventsDAO dao = new EventsDAO();
+
+        Events events = dao.setEvent();
+        model.addAttribute("Event",events);
 
         return "events";
     }
