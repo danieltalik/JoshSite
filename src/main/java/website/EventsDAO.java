@@ -1,13 +1,14 @@
 package website;
 
 import java.sql.*;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EventsDAO {
     private final String url = "jdbc:postgresql://localhost:5432/JoshSite";
     private final String user = "postgres";
     private final String password = "password";
-    private final String testQuery = "SELECT * FROM events WHERE event_name = 'Music Royale Recovery Benefit Concert'";
+    private final String eventQuery = "SELECT * FROM events ORDER BY event_datetime ASC;";
 
 
     public Connection connection(){
@@ -18,16 +19,19 @@ public class EventsDAO {
             e.getMessage();
         } return conn;
     }
-    public Events setEvent(){
-        Events events = new Events();
+    public List<Event> setEvent(){
+        List<Event> events = new ArrayList<>();
+
         try {
             connection();
             Statement st = connection().createStatement();
-            ResultSet rs = st.executeQuery(testQuery);
+            ResultSet rs = st.executeQuery(eventQuery);
             while (rs.next()){
-                events.setName(rs.getString("Event_Name"));
-                events.setDtf(rs.getTimestamp("Event_DateTime"));
-                events.setLocation(rs.getString("Event_Location"));
+                Event event = new Event();
+                event.setName(rs.getString("Event_Name"));
+                event.setDate(rs.getTimestamp("Event_DateTime"));
+                event.setLocation(rs.getString("Event_Location"));
+                events.add(event);
             }
         }catch (SQLException e){
             e.getMessage();

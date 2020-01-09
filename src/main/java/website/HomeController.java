@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
+import java.util.List;
 
 
 //TODO: Have users enter and submit profiles to access lessons for Josh to teach. This sends emails to Josh
@@ -52,8 +53,8 @@ public class HomeController {
 
         EventsDAO dao = new EventsDAO();
 
-        Events events = dao.setEvent();
-        model.addAttribute("Event",events);
+        List<Event> events = dao.setEvent();
+        model.addAttribute("Events", events);
 
         return "events";
     }
@@ -65,7 +66,7 @@ public class HomeController {
         return "lessons";
     }
 
-    //TODO: Remove Projects and address in the future
+    // Removed Projects and addressing in the future
    /* @RequestMapping("/projects")
     public String projects() {
 

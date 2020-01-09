@@ -55,9 +55,10 @@
             <li class="hz">
                 <a class="link" th:href="@{/lessons}">Lessons</a>
             </li>
-            <li class="hz">
+            <!--<li class="hz">
                 <a th:href="@{/projects}">Projects</a>
             </li>
+            -->
         </ul>
     </nav>
 </header>
@@ -68,13 +69,15 @@
     <h6 class="moreInfo"><a href="http://www.shortnorthstage.org/calendar/v/730">More Info</a></h6>
 
 </div>
+<th:block th:each="Event : ${Events}">
 <div class="al textBorder">
-    <h4 th:text="${Event.name}"></h4>
-    <h6 th:text="${Event.dtf}"></h6>
-    <h6 th:text="${Event.location}"></h6>
-    <h6 class="moreInfo"><a href="https://www.facebook.com/events/407147943314184/?active_tab=about">More Info</a></h6>
 
+    <h4 th:text="${Event.name}"></h4>
+    <h6 th:text="${Event.date}"></h6>
+    <h6 th:text="${Event.location}"></h6>
+    <h6 class="moreInfo"><a href="https://www.facebook.com/event/407147943314184/?active_tab=about">More Info</a></h6>
 </div>
+</th:block>
 <div class="al textBorder">
     <h4><a href="http://www.shortnorthstage.org/calendar/v/731">Saturday Night Fever (5 full weekends)</a></h4>
     <h6> November 29th-December 29th</h6>
