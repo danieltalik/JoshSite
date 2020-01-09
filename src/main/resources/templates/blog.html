@@ -60,6 +60,12 @@
         </ul>
     </nav>
 </header>
-<p>Blog</p>
+<th:block th:each="Blog : ${BlogPosts}">
+    <div class="al textBorder">
+        <h4 th:text="${Blog.date}"></h4>
+        <h6 th:text="${Blog.title}"></h6>
+        <a th:href ="@{'/blogPost/' + ${Blog.id}}">View Entry</a>
+    </div>
+</th:block>
 </body>
 </html>

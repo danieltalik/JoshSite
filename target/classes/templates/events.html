@@ -75,7 +75,7 @@
     <h4 th:text="${Event.name}"></h4>
     <h6 th:text="${Event.date}"></h6>
     <h6 th:text="${Event.location}"></h6>
-    <h6 class="moreInfo"><a href="https://www.facebook.com/event/407147943314184/?active_tab=about">More Info</a></h6>
+    <h6 class="moreInfo"><a th:href="${Event.link}">More Info</a></h6>
 </div>
 </th:block>
 <div class="al textBorder">
