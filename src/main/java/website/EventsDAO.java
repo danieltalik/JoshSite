@@ -33,7 +33,7 @@ public class EventsDAO {
 
                 event.setId(rs.getInt("event_id"));
                 event.setName(rs.getString("event_name"));
-                event.setMultiDay(rs.getBoolean("event_mulitDay"));
+                event.setMultiDay(rs.getBoolean("event_multiDay"));
                 event.setStartDate(rs.getTimestamp("event_startDate"));
                 event.setDateRange(rs.getTimestamp("event_endDate"));
                 event.setLocation(rs.getString("event_location"));

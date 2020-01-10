@@ -62,34 +62,13 @@
         </ul>
     </nav>
 </header>
-<div class="al textBorder">
-    <h4><a href="http://www.shortnorthstage.org/calendar/v/730">West Side Story</a></h4>
-    <h6>November 16th @ 8pm</h6>
-    <h6>Short North Stage, Garden Theater</h6>
-    <h6 class="moreInfo"><a href="http://www.shortnorthstage.org/calendar/v/730">More Info</a></h6>
-
-</div>
 <th:block th:each="Event : ${Events}">
 <div class="al textBorder">
-
     <h4 th:text="${Event.name}"></h4>
     <h6 th:text="${Event.date}"></h6>
     <h6 th:text="${Event.location}"></h6>
     <h6 class="moreInfo"><a th:href="${Event.link}">More Info</a></h6>
 </div>
 </th:block>
-<div class="al textBorder">
-    <h4><a href="http://www.shortnorthstage.org/calendar/v/731">Saturday Night Fever (5 full weekends)</a></h4>
-    <h6> November 29th-December 29th</h6>
-    <h6> Short North Stage, Garden Theater</h6>
-    <h6 class="moreInfo"><a href="http://www.shortnorthstage.org/calendar/v/731">More Info</a></h6>
-</div>
-<div class="al textBorder">
-
-    <h4><a href="http://ngsymphony.org/Holiday_Pops_2019.php">A Very Merry Holiday Pops!</a></h4>
-    <h6> December 8th @ 7pm</h6>
-    <h6> Newark-Granville Symphony Orchestra, The Midland Theater</h6>
-    <h6 class="moreInfo"><a href="http://ngsymphony.org/Holiday_Pops_2019.php">More Info</a></h6>
-</div>
 </body>
 </html>

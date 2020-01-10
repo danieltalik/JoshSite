@@ -21,51 +21,55 @@ import java.util.List;
 @RequestMapping("/")
 public class HomeController {
 
-    //TODO: Fix Homepage Picture on Mobile Devices and add mobile nav capacity
-
-    @RequestMapping("/")
-    public String homeIndex(Model model, HttpSession session) {
-        // Commenting out Sessions and other items until Josh decides he wants to add this
+    private static void setSession(Model model,HttpSession session){
         User user = new User();
         if(Objects.nonNull(session) && session.getAttribute("Visitor") == null) {
             session.setAttribute("Visitor", user);
         }
         model.addAttribute("Visitor",session.getAttribute("Visitor"));
+    }
+    //TODO: Fix Homepage Picture on Mobile Devices and add mobile nav capacity
+    @RequestMapping("/")
+    public String homeIndex(Model model, HttpSession session) {
+        // Commenting out Sessions and other items until Josh decides he wants to add this
+        setSession(model,session);
 
         return "index";
     }
 
     @RequestMapping("/bio")
-    public String bio() {
-
+    public String bio(Model model, HttpSession session) {
+        setSession(model,session);
         return "bio";
     }
 
     //Give Josh functionality to add, edit, update, and delete posts. Each post will divert to it's own page
     @RequestMapping("/blog")
-    public String blog(Model model) {
+    public String blog(Model model,HttpSession session) {
 
+        setSession(model,session);
         BlogDAO blogDAO = new BlogDAO();
         List<Blog> blogPosts = blogDAO.allEntries();
         model.addAttribute("BlogPosts",blogPosts);
+        model.addAttribute("Visitor",session.getAttribute("Visitor"));
         return "blog";
     }
 
-    @RequestMapping("/blogPost/{id}")
-    public String blogPost(@PathVariable int id, Model model) {
 
+    @RequestMapping("/blogPost/{id}")
+    public String blogPost(@PathVariable int id, Model model, HttpSession session) {
+        setSession(model,session);
         Blog blog = new BlogDAO().blogEntry(id);
         model.addAttribute("Blog",blog);
+        model.addAttribute("Visitor",session.getAttribute("Visitor"));
         return "blogPost";
     }
 
     @RequestMapping("/events")
-    public String events(Model model) {
-
+    public String events(Model model,HttpSession session) {
+        setSession(model,session);
         //TODO:Add dropdown for past and current events and set up way to move current events to past events using date utils
-
         EventsDAO dao = new EventsDAO();
-
         List<Event> events = dao.setEvent();
         model.addAttribute("Events", events);
 
@@ -74,8 +78,8 @@ public class HomeController {
 
     //Lesson Booking
     @RequestMapping("/lessons")
-    public String lessons() {
-
+    public String lessons(Model model, HttpSession session) {
+        setSession(model,session);
         return "lessons";
     }
 
@@ -88,16 +92,16 @@ public class HomeController {
 
    //TODO: Related to lessons company, location, rates, etc.,
     @RequestMapping("/teaching")
-    public String teaching() {
-
+    public String teaching(Model model, HttpSession session) {
+        setSession(model,session);
         return "teaching";
     }
 
     // Commenting Out These until told to add
 
     @RequestMapping("/register")
-    public String register(Model model) {
-
+    public String register(Model model,HttpSession session) {
+        setSession(model,session);
         User user = new User();
         model.addAttribute("person",user);
         return "register";
@@ -105,7 +109,7 @@ public class HomeController {
     }
     @RequestMapping(value = "/userAdd", method = RequestMethod.POST)
     public ModelAndView userAdd(@ModelAttribute User user, Model model, HttpSession session){
-
+        setSession(model,session);
         model.addAttribute("person",user);
         session.setAttribute("Visitor",user);
         return new ModelAndView( "redirect:/");
@@ -113,8 +117,7 @@ public class HomeController {
 
     @RequestMapping("/login")
     public String login(Model model, HttpSession session) {
-
-
+        setSession(model,session);
         return "login";
     }
 

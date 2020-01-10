@@ -26,11 +26,46 @@
     });
     </script>
 </head>
-</head>
 <body>
+<header>
+    <div>
+        <a th:href="@{/}"/>
+        <h1>Joshua Decker</h1>
+    </div>
+    <!--<h3 id="tagline">Classically Trained Music Instructor and Master of Funk</h3> -->
+    <h3 id="tagline">Versatile Music Instructor and Voyaging Trumpeter</h3>
+    <!-- Template for future Sign In and Sign Out Functionality -->
+    <h4 th:if="${Visitor.name != null}" th:text="${Visitor.name}"></h4>
+    <nav>
+        <ul class="al">
+            <li class="hz">
+                <a th:href="@{/}">Home</a>
+            </li>
+            <li class="hz">
+                <a th:href="@{/bio}">Bio</a>
+            </li>
+            <li class="hz">
+                <a th:href="@{/events}">Events</a>
+            </li>
+            <li class="hz">
+                <a th:href="@{/teaching}">Teaching</a>
+            </li>
+            <li class="hz">
+                <a th:href="@{/blog}">Blog</a>
+            </li>
+            <li class="hz">
+                <a class="link" th:href="@{/lessons}">Lessons</a>
+            </li>
+            <!--<li class="hz">
+                <a th:href="@{/projects}">Projects</a>
+            </li>
+            -->
+        </ul>
+    </nav>
+</header>
 <div class="al textBorder">
-    <h4 th:text="${Blog.date}"></h4>
-    <h6 th:text="${Blog.title}"></h6>
+    <h4 th:text="${Blog.title}"></h4>
+    <h6 th:text="${Blog.date}"></h6>
     <p th:text="${Blog.content}"></p>
 </div>
 </body>
