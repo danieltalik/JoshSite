@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import website.Login.User;
 
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
@@ -72,7 +73,7 @@ public class HomeController {
         EventsDAO dao = new EventsDAO();
         List<Event> events = dao.setEvent();
         model.addAttribute("Events", events);
-
+        model.addAttribute("Visitor",session.getAttribute("Visitor"));
         return "events";
     }
 
@@ -97,16 +98,14 @@ public class HomeController {
         return "teaching";
     }
 
-    // Commenting Out These until told to add
-
     @RequestMapping("/register")
-    public String register(Model model,HttpSession session) {
+    public String register(Model model, HttpSession session) {
         setSession(model,session);
         User user = new User();
         model.addAttribute("person",user);
         return "register";
-
     }
+
     @RequestMapping(value = "/userAdd", method = RequestMethod.POST)
     public ModelAndView userAdd(@ModelAttribute User user, Model model, HttpSession session){
         setSession(model,session);
@@ -114,13 +113,5 @@ public class HomeController {
         session.setAttribute("Visitor",user);
         return new ModelAndView( "redirect:/");
     }
-
-    @RequestMapping("/login")
-    public String login(Model model, HttpSession session) {
-        setSession(model,session);
-        return "login";
-    }
-
-
 
 }

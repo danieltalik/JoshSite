@@ -46,7 +46,8 @@
               display: block;
               margin-left: auto;
               margin-right: auto;
-              width: 50%;
+              padding-bottom: 5px;
+              width: 25%;
             }
             #homeImage {
                 display: block;
@@ -57,3 +58,4 @@
             .moreInfo{
                 color: #214cea;
             }
+

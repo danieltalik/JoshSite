@@ -34,7 +34,7 @@
     <!--<h3 id="tagline">Classically Trained Music Instructor and Master of Funk</h3> -->
     <h3 id="tagline">Versatile Music Instructor and Voyaging Trumpeter</h3>
     <!-- Template for future Sign In and Sign Out Functionality -->
-    <h4 th:if="${Visitor.name != null}" th:text="${Visitor.name}"></h4>
+
     <nav>
         <ul class="al">
             <li class="hz">
@@ -55,6 +55,9 @@
             <li class="hz">
                 <a class="link" th:href="@{/lessons}">Lessons</a>
             </li>
+            <li class="hz" th:if="${Visitor.loggedIn == true}">
+                <a th:href="@{/logout}">Log Out</a>
+            </li>
             <!--<li class="hz">
                 <a th:href="@{/projects}">Projects</a>
             </li>
@@ -66,7 +69,7 @@
     <span class="fa fa-twitter"></span>
 </a>
 <div>
-    <img src="/images/suit.jpg"
+    <img src="/images/tropical.jpg"
          class="img-fluid" alt="Responsive image" id="homeImage">
 </div>
 </body>

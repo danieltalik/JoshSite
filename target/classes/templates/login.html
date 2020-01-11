@@ -61,9 +61,15 @@
         </ul>
     </nav>
 </header>
-<form class="form-inline my-2 my-lg-0">
+<!--<form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Password">
     <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
+    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Login</button>
+</form>
+-->
+<form method="post" th:object="${Visitor}" th:action="@{/logging}">
+    <input type="text" name="Username" th:field="*{username}" placeholder="Username">
+    <input type="password" name="Password" th:field="*{password}" placeholder="Password">
     <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Login</button>
 </form>
 </body>

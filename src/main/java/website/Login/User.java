@@ -1,8 +1,8 @@
-package website;
+package website.Login;
 
 public class User {
     private String name;
-    private String email;
+    private boolean loggedIn;
     private String username;
     private String password;
 
@@ -26,15 +26,11 @@ public class User {
         return username;
     }
 
+    public void setLoggedIn(boolean loggedIn){this.loggedIn = loggedIn;}
+
+    public boolean getLoggedIn(){return loggedIn;}
+
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }
