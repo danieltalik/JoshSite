@@ -65,16 +65,26 @@ public class HomeController {
         model.addAttribute("Visitor",session.getAttribute("Visitor"));
         return "blogPost";
     }
-
     @RequestMapping("/events")
     public String events(Model model,HttpSession session) {
         setSession(model,session);
         //TODO:Add dropdown for past and current events and set up way to move current events to past events using date utils
         EventsDAO dao = new EventsDAO();
-        List<Event> events = dao.setEvent();
+        List<Event> events = dao.setUpcomingEvent();
         model.addAttribute("Events", events);
         model.addAttribute("Visitor",session.getAttribute("Visitor"));
         return "events";
+    }
+
+    @RequestMapping("/pastEvents")
+    public String pastEvents(Model model,HttpSession session) {
+        setSession(model,session);
+        //TODO:Add dropdown for past and current events and set up way to move current events to past events using date utils
+        EventsDAO dao = new EventsDAO();
+        List<Event> events = dao.setPastEvent();
+        model.addAttribute("Events", events);
+        model.addAttribute("Visitor",session.getAttribute("Visitor"));
+        return "pastEvents";
     }
 
     //Lesson Booking

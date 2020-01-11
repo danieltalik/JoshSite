@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Lessons</title>
+    <title>Events</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,6 +24,8 @@
         $('body').css('display', 'none');
         $('body').fadeIn(350);
     });
+
+
     </script>
 </head>
 <body>
@@ -66,8 +68,13 @@
         </ul>
     </nav>
 </header>
-<p>
-    Lessons
-</p>
+<th:block th:each="Event : ${Events}" class="al">
+    <div class="al textBorder">
+        <h4 th:text="${Event.name}"></h4>
+        <h6 th:text="${Event.date}"></h6>
+        <h6 th:text="${Event.location}"></h6>
+        <h6 class="moreInfo"><a th:href="${Event.link}">More Info</a></h6>
+    </div>
+</th:block>
 </body>
 </html>

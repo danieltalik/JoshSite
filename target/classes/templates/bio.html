@@ -1,13 +1,13 @@
-<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>About Me</title>
+    <title>Josh Decker</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <link href="/CSS/stylesheet.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -24,7 +24,7 @@
         $('body').css('display', 'none');
         $('body').fadeIn(350);
     });
-</script>
+    </script>
 </head>
 <body>
 <header>
@@ -32,7 +32,10 @@
         <a th:href="@{/}"/>
         <h1>Joshua Decker</h1>
     </div>
-    <h3 id="tagline">Classically Trained Music Instructor and Master of Funk </h3>
+    <!--<h3 id="tagline">Classically Trained Music Instructor and Master of Funk</h3> -->
+    <h3 id="tagline">Versatile Music Instructor and Voyaging Trumpeter</h3>
+    <!-- Template for future Sign In and Sign Out Functionality -->
+
     <nav>
         <ul class="al">
             <li class="hz">
@@ -53,6 +56,9 @@
             <li class="hz">
                 <a class="link" th:href="@{/lessons}">Lessons</a>
             </li>
+            <li class="hz" th:if="${Visitor.loggedIn == true}">
+                <a th:href="@{/logout}">Log Out</a>
+            </li>
             <!--<li class="hz">
                 <a th:href="@{/projects}">Projects</a>
             </li>
@@ -60,11 +66,14 @@
         </ul>
     </nav>
 </header>
+<a class="btn btn-social-icon btn-twitter">
+    <span class="fa fa-twitter"></span>
+</a>
 <div>
     <img src="/images/suit.jpg"
          class="img-fluid" alt="Responsive image" id="centerImage">
 </div>
-<div class="al textBorder">
+<div class="textBorder">
     <p>
         Josh Decker is a trumpet performer and educator currently residing in central Ohio. His playing career has been
         both
@@ -87,7 +96,7 @@
     <p>
         Josh's musical interests and expertise lead him to co-founding Pittsburgh's brass-funk band, the Employees of
         Funk,
-        a group in which he composed original material, arrangments, and played trumpet in from 2015-2017.
+        a group in which he composed original material, arrangements, and played trumpet in from 2015-2017.
     </p>
 
     <p>
@@ -113,11 +122,9 @@
     </p>
 
     <p>Josh holds a BM in Music Education from Ohio Wesleyan University and a Masters of Music in trumpet performance
-    from
-    Carnegie Mellon University. His primary teachers include Larry Griffin and George Vosburgh, former Principal
-    Trumpet
-    of the Pittsburgh Symphony Orchestra.
+        from
+        Carnegie Mellon University. His primary teachers include Larry Griffin and George Vosburgh, former Principal
+        Trumpet
+        of the Pittsburgh Symphony Orchestra.
     </p>
 </div>
-</body>
-</html>

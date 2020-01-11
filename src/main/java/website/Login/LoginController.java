@@ -32,7 +32,7 @@ public class LoginController {
 
     @RequestMapping(value = "/logging", method = RequestMethod.POST)
     public ModelAndView userAdd(@ModelAttribute User user, Model model, HttpSession session){
-        user = new UserDAO().userLogin(user.getPassword());
+        user = new UserDAO().userLogin(user.getUsername(),user.getPassword());
 
         if(user.getName().isEmpty()){
             return new ModelAndView("redirect:login");

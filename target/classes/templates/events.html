@@ -26,6 +26,7 @@
     });
 
 
+
     </script>
 </head>
 <body>
@@ -34,7 +35,10 @@
         <a th:href="@{/}"/>
         <h1>Joshua Decker</h1>
     </div>
-    <h3 id="tagline">Classically Trained Music Instructor and Master of Funk </h3>
+    <!--<h3 id="tagline">Classically Trained Music Instructor and Master of Funk</h3> -->
+    <h3 id="tagline">Versatile Music Instructor and Voyaging Trumpeter</h3>
+    <!-- Template for future Sign In and Sign Out Functionality -->
+
     <nav>
         <ul class="al">
             <li class="hz">
@@ -55,6 +59,9 @@
             <li class="hz">
                 <a class="link" th:href="@{/lessons}">Lessons</a>
             </li>
+            <li class="hz" th:if="${Visitor.loggedIn == true}">
+                <a th:href="@{/logout}">Log Out</a>
+            </li>
             <!--<li class="hz">
                 <a th:href="@{/projects}">Projects</a>
             </li>
@@ -62,13 +69,16 @@
         </ul>
     </nav>
 </header>
-<th:block th:each="Event : ${Events}">
-<div class="al textBorder">
-    <h4 th:text="${Event.name}"></h4>
-    <h6 th:text="${Event.date}"></h6>
-    <h6 th:text="${Event.location}"></h6>
-    <h6 class="moreInfo"><a th:href="${Event.link}">More Info</a></h6>
+<div class="al">
+    <h6 class="moreInfo"><a th:href="@{/pastEvents}">Click Here for Past Events</a></h6>
 </div>
+<th:block th:each="Event : ${Events}">
+    <div class="al textBorder">
+        <h4 th:text="${Event.name}"></h4>
+        <h6 th:text="${Event.date}"></h6>
+        <h6 th:text="${Event.location}"></h6>
+        <h6 class="moreInfo"><a th:href="${Event.link}">More Info</a></h6>
+    </div>
 </th:block>
 </body>
 </html>

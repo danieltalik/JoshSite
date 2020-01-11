@@ -8,6 +8,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <link href="/CSS/stylesheet.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -35,7 +36,7 @@
     <!--<h3 id="tagline">Classically Trained Music Instructor and Master of Funk</h3> -->
     <h3 id="tagline">Versatile Music Instructor and Voyaging Trumpeter</h3>
     <!-- Template for future Sign In and Sign Out Functionality -->
-    <h4 th:if="${Visitor.name != null}" th:text="${Visitor.name}"></h4>
+
     <nav>
         <ul class="al">
             <li class="hz">
@@ -56,6 +57,9 @@
             <li class="hz">
                 <a class="link" th:href="@{/lessons}">Lessons</a>
             </li>
+            <li class="hz" th:if="${Visitor.loggedIn == true}">
+                <a th:href="@{/logout}">Log Out</a>
+            </li>
             <!--<li class="hz">
                 <a th:href="@{/projects}">Projects</a>
             </li>
@@ -63,9 +67,9 @@
         </ul>
     </nav>
 </header>
-<div class="al textBorder">
-    <h4 th:text="${Blog.title}"></h4>
-    <h6 th:text="${Blog.date}"></h6>
+<div class="textBorder">
+    <h4 th:text="${Blog.title}" class="al"></h4>
+    <h6 th:text="${Blog.date}" class="al"></h6>
     <p th:text="${Blog.content}"></p>
 </div>
 </body>
