@@ -24,6 +24,11 @@
         $('body').css('display', 'none');
         $('body').fadeIn(350);
     });
+
+
+
+
+
     </script>
 </head>
 <body>
@@ -70,7 +75,11 @@
     <div class="al textBorder">
         <h4 th:text="${Blog.title}"></h4>
         <h6 th:text="${Blog.date}"></h6>
-        <h6 class="moreInfo"><a th:href ="@{'/blogPost/' + ${Blog.id}}">View Entry</a></h6>
+        <h6 class="moreInfo"><a th:href="@{'/blogPost/' + ${Blog.id}}">View Entry</a></h6>
+        <a th:href="@{'/deleteBlog/' + ${Blog.id}}">
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"
+                    th:if="${Visitor.loggedIn == true}">Delete Blog</button>
+        </a>
     </div>
 </th:block>
 </body>

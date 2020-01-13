@@ -52,6 +52,26 @@
               padding-bottom: 5px;
               width: 40%;
             }
+            #bioImage {
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 5px;
+                width: 50%;
+                float:left;
+            }
+
+            #bioBorder{
+            	display:inline-block;
+            	border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width:50%;
+                margin: auto;
+                float:right;
+                font-size: 14.5px;
+             }
+
             #homeImage {
                 display: block;
                 margin-left: auto;

@@ -11,6 +11,7 @@ public class BlogDAO {
     private final String password = "password";
     private final String allQuery = "SELECT * FROM blog ORDER BY blog_date DESC;";
     private final String idQuery = "SELECT blog_date,blog_title,blog_content FROM blog WHERE blog_id = ?;";
+    private final String deleteQuery = "DELETE FROM blog WHERE blog_id = ?;";
 
 
     public Connection connection(){
@@ -61,5 +62,18 @@ public class BlogDAO {
             e.getMessage();
         }
         return blog;
+    }
+    public String deleteBlogEntry(int id){
+
+        try {
+            connection();
+            PreparedStatement ps = connection().prepareStatement(deleteQuery);
+            ps.setInt(1,id);
+            ps.executeUpdate();
+
+        }catch (SQLException e){
+            e.getMessage();
+        }
+        return "blog";
     }
 }

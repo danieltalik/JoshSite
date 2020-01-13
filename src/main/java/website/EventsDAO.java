@@ -12,7 +12,7 @@ public class EventsDAO {
     private final String password = "password";
     private final String currentEventQuery = "SELECT * FROM events WHERE event_enddate > CURRENT_TIMESTAMP ORDER BY event_startDate ASC;";
     private final String pastEventQuery = "SELECT * FROM events WHERE event_enddate < CURRENT_TIMESTAMP ORDER BY event_startDate ASC ;";
-
+    private final String removeEventQuery = "";
 
     public Connection connection(){
         Connection conn = null;
