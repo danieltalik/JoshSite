@@ -11,11 +11,22 @@
 			}
 			p{
 			    font-family: 'Merriweather', serif;
+			    font-size:14px;
 			}
 
 			@media only screen and (max-width: 991px) {
 				#tagline {
 					display: none;
+				}
+				#bioImage{
+				   display: inline-block;
+				}
+
+				#bioBorder{
+				    display: inline-block;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    padding: 5px;
 				}
 			}
 			a{
@@ -39,25 +50,34 @@
 			}
 
 			.textBorder{
-			  border: 1px solid #ddd;
-              border-radius: 4px;
-              padding: 5px;
-              width:85%;
-              margin: auto;
+			    border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width:85%;
+                margin: auto;
             }
             #centerImage {
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
-              padding-bottom: 5px;
-              width: 40%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 5px;
+                width: 40%;
             }
+            #centerText{
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width:85%;
+                margin: auto;
+            }
+
             #bioImage {
                 display: inline-block;
                 margin-left: auto;
                 margin-right: auto;
                 padding-bottom: 5px;
-                width: 50%;
+                padding-right: 5px;
+                width: 40%;
                 float:left;
             }
 
@@ -69,7 +89,7 @@
                 width:50%;
                 margin: auto;
                 float:right;
-                font-size: 14.5px;
+                font-size: 15px;
              }
 
             #homeImage {

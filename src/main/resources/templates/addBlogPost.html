@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Blog</title>
+    <meta charset="UTF-8">
+    <title>Add Blog Post</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,10 +25,6 @@
         $('body').css('display', 'none');
         $('body').fadeIn(350);
     });
-
-
-
-
 
     </script>
 </head>
@@ -71,19 +68,16 @@
         </ul>
     </nav>
 </header>
-<a class="hz" th:if="${Visitor.loggedIn == true}">
-    <a th:href="@{/addBlogPost}">Add New Post</a>
-</a>
-<th:block th:each="Blog : ${BlogPosts}">
-    <div class="al textBorder">
-        <h4 th:text="${Blog.title}"></h4>
-        <h6 th:text="${Blog.date}"></h6>
-        <h6 class="moreInfo"><a th:href="@{'/blogPost/' + ${Blog.id}}">View Entry</a></h6>
-        <a th:href="@{'/deleteBlog/' + ${Blog.id}}">
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"
-                    th:if="${Visitor.loggedIn == true}">Delete Blog</button>
-        </a>
-    </div>
-</th:block>
+<!--<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Password">
+    <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
+    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Login</button>
+</form>
+-->
+<form method="post" th:object="${Blog}" th:action="@{/submitBlog}" class="form-inline justify-content-center">
+    <input type="text" name="Title" th:field="*{title}" placeholder="Blog Title">
+    <textarea name="Content" th:field="*{content}" placeholder="Blog Content Here"/>
+    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Submit</button>
+</form>
 </body>
 </html>

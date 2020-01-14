@@ -9,6 +9,7 @@ public class Blog {
     private String date;
     private String title;
     private String content;
+    private Timestamp postDate;
 
     public int getId() {
         return id;
@@ -63,5 +64,13 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Timestamp getPostDate() {
+        return postDate;
+    }
+
+    public void setPostDate(Timestamp postDate) {
+        this.postDate = postDate;
     }
 }
