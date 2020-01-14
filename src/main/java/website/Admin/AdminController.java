@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import website.Blog;
 import website.BlogDAO;
+import website.Event;
 import website.Login.User;
 import website.Login.UserDAO;
 
@@ -43,7 +44,17 @@ public class AdminController {
 
     @RequestMapping(value = "/submitBlogPost", method = RequestMethod.POST)
     public ModelAndView blogAdd(@ModelAttribute Blog blog, Model model, HttpSession session){
+        String content = blog.getContent();
         String result = new BlogDAO().blogEntry(blog);
         return new ModelAndView( "redirect:/");
+    }
+
+    @RequestMapping("addEvent")
+    public String addEvent(Model model, HttpSession session){
+        setSession(model,session);
+        Event event = new Event();
+
+        model.addAttribute("Event",event);
+        return "addEvent";
     }
 }

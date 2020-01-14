@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add Blog Post</title>
+    <title>Add Event</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -75,10 +75,9 @@
 </form>
 -->
 <div align="center">
-    <form method="post" th:object="${Blog}" th:action="@{/submitBlogPost}">
-        <input type="text" name="Title" th:field="*{title}" placeholder="Blog Title" class="blogInput">
-        <textarea rows="20" cols="100" name="Content" th:field="*{content}"
-                  placeholder="Blog Content Here" class="blogInput"/>
+    <form method="post" th:object="${Event}" th:action="@{/submitBlogPost}">
+        <input type="datetime-local>
+        <input type="text" name="Title" th:field="*{title}" placeholder="Event Title" class="blogInput">
         <button class="btn btn-outline-danger my-2 my-sm-0 blogInput" type="submit">Submit</button>
     </form>
 </div>

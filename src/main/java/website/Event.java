@@ -8,13 +8,15 @@ public class Event {
     public int id;
     public String name;
     public String location;
-    //public Timestamp dtf;
+    public Timestamp dtf;
     public LocalDateTime ldt;
     public String startDate;
     public String dateRange;
     public String date;
     public String link;
     public boolean multiDay;
+    public LocalDateTime inputStartDate;
+    public LocalDateTime inputEndDate;
 
     public int getId() {
         return id;
@@ -132,5 +134,20 @@ public class Event {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public void setInputStartDate(LocalDateTime inputStartDate) {
+        this.inputStartDate = inputStartDate;
+    }
+
+    public LocalDateTime getInputStartDate() {
+        return inputStartDate;
+    }
+
+    public void setInputEndDate(LocalDateTime inputEndDate) {
+        this.inputEndDate = inputEndDate;
+    }
+    public LocalDateTime getInputEndDate(){
+        return inputEndDate;
     }
 }

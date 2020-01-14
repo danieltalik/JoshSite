@@ -74,10 +74,13 @@
     <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Login</button>
 </form>
 -->
-<form method="post" th:object="${Blog}" th:action="@{/submitBlog}" class="form-inline justify-content-center">
-    <input type="text" name="Title" th:field="*{title}" placeholder="Blog Title">
-    <textarea name="Content" th:field="*{content}" placeholder="Blog Content Here"/>
-    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Submit</button>
-</form>
+<div align="center">
+    <form method="post" th:object="${Blog}" th:action="@{/submitBlogPost}">
+        <input type="text" name="Title" th:field="*{title}" placeholder="Blog Title" class="blogInput">
+        <textarea rows="20" cols="100" name="Content" th:field="*{content}"
+                  placeholder="Blog Content Here" class="blogInput"/>
+        <button class="btn btn-outline-danger my-2 my-sm-0 blogInput" type="submit">Submit</button>
+    </form>
+</div>
 </body>
 </html>

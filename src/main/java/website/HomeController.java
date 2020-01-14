@@ -29,7 +29,7 @@ public class HomeController {
         }
         model.addAttribute("Visitor",session.getAttribute("Visitor"));
     }
-    //TODO: Fix Homepage Picture on Mobile Devices and add mobile nav capacity
+    //TODO: Add mobile nav capacity
     @RequestMapping("/")
     public String homeIndex(Model model, HttpSession session) {
         // Commenting out Sessions and other items until Josh decides he wants to add this
@@ -44,7 +44,6 @@ public class HomeController {
         return "bio";
     }
 
-    //Give Josh functionality to add, edit, update, and delete posts. Each post will divert to it's own page
     @RequestMapping("/blog")
     public String blog(Model model,HttpSession session) {
 
@@ -61,6 +60,9 @@ public class HomeController {
     public String blogPost(@PathVariable int id, Model model, HttpSession session) {
         setSession(model,session);
         Blog blog = new BlogDAO().blogEntry(id);
+        //String str = blog.getContent();
+        //str = str.replace("\r\n\r\n","<br/>");
+        //blog.setContent(str);
         model.addAttribute("Blog",blog);
         model.addAttribute("Visitor",session.getAttribute("Visitor"));
         return "blogPost";
@@ -68,7 +70,6 @@ public class HomeController {
     @RequestMapping("/events")
     public String events(Model model,HttpSession session) {
         setSession(model,session);
-        //TODO:Add dropdown for past and current events and set up way to move current events to past events using date utils
         EventsDAO dao = new EventsDAO();
         List<Event> events = dao.setUpcomingEvent();
         model.addAttribute("Events", events);
@@ -79,7 +80,6 @@ public class HomeController {
     @RequestMapping("/pastEvents")
     public String pastEvents(Model model,HttpSession session) {
         setSession(model,session);
-        //TODO:Add dropdown for past and current events and set up way to move current events to past events using date utils
         EventsDAO dao = new EventsDAO();
         List<Event> events = dao.setPastEvent();
         model.addAttribute("Events", events);

@@ -13,8 +13,7 @@ public class BlogDAO {
     private final String allQuery = "SELECT * FROM blog ORDER BY blog_date DESC;";
     private final String idQuery = "SELECT blog_date,blog_title,blog_content FROM blog WHERE blog_id = ?;";
     private final String deleteQuery = "DELETE FROM blog WHERE blog_id = ?;";
-    private final String insertQuery = "INSERT INTO blog(blog_date,blog_title,blog_content) " +
-            "VALUES(blog_date = ?,blog_title= ?, blog_content = ?;";
+    private final String insertQuery = "INSERT INTO blog(blog_date,blog_title,blog_content) VALUES(?, ?, ?);";
 
 
     public Connection connection(){

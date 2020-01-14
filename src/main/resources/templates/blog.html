@@ -71,9 +71,9 @@
         </ul>
     </nav>
 </header>
-<a class="hz" th:if="${Visitor.loggedIn == true}">
-    <a th:href="@{/addBlogPost}">Add New Post</a>
-</a>
+<div class="al" th:if="${Visitor.loggedIn == true}">
+    <h6 class="moreInfo"><a th:href="@{/addBlogPost}">Click Here To Add Blog Post</a></h6>
+</div>
 <th:block th:each="Blog : ${BlogPosts}">
     <div class="al textBorder">
         <h4 th:text="${Blog.title}"></h4>
