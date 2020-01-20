@@ -1,4 +1,4 @@
-package website.Login;
+package website.Model;
 
 public class User {
     private String username;

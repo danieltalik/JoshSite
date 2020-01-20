@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="/CSS/stylesheet.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -75,9 +76,25 @@
 </form>
 -->
 <div align="center">
-    <form method="post" th:object="${Event}" th:action="@{/submitBlogPost}">
-        <input type="datetime-local" th:field="*{inputStartDate}">
-        <input type="text" name="Title" th:field="*{title}" placeholder="Event Title" class="blogInput">
+    <form method="post" th:object="${Event}" th:action="@{/submitEvent}">
+        <input type="text" name="Title" th:field="*{name}" placeholder="Event Title" class="blogInput">
+        <input type="text" name="Title" th:field="*{location}" placeholder="Event Location" class="blogInput">
+        <input type="datetime-local" th:field="*{inputStartDate}" placeholder="Start Date">
+        <h6>Is this Event a Series?</h6>
+        <input type="checkbox" th:field="*{multiDay}" id="myCheck" onclick="checkTheBox()">
+        <script>
+            function checkTheBox() {
+                var checkBox = document.getElementById("myCheck");
+                var input = document.getElementById("endDate");
+                if (checkBox.checked == true){
+                    input.style.display = "block";
+                    } else {
+                        input.style.display = "none";
+                    }
+            }
+        </script>
+        <input type="datetime-local" th:field="*{inputEndDate}" placeholder="End Date" id="endDate" style="display:none">
+        <input type="text" name="Title" th:field="*{link}" placeholder="Event Link" class="blogInput">
         <button class="btn btn-outline-danger my-2 my-sm-0 blogInput" type="submit">Submit</button>
     </form>
 </div>

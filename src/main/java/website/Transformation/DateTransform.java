@@ -1,42 +1,15 @@
-package website;
+package website.Transformation;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-public class Event {
+public class DateTransform {
 
-    public int id;
-    public String name;
-    public String location;
-    public Timestamp dtf;
-    public LocalDateTime ldt;
-    public String startDate;
-    public String dateRange;
-    public String date;
-    public String link;
-    public boolean multiDay;
-    public LocalDateTime inputStartDate;
-    public LocalDateTime inputEndDate;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public boolean isMultiDay() {
-        return multiDay;
-    }
-
-    public void setMultiDay(boolean multiDay) {
-        this.multiDay = multiDay;
-    }
-
-    public String getStartDate() {
-        return startDate;
-    }
+    private LocalDateTime ldt;
+    private String startDate;
+    private String dateRange;
+    private String date;
+    private boolean multiDay;
 
     public void setStartDate(Timestamp dtf) {
         ldt = dtf.toLocalDateTime();
@@ -111,43 +84,10 @@ public class Event {
             date = dateRange;
         } else date = startDate;
     }
-
-    public String getLocation() {
-        return location;
+    public void setMultiDay(boolean multiDay){
+        this.multiDay = multiDay;
     }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public void setInputStartDate(LocalDateTime inputStartDate) {
-        this.inputStartDate = inputStartDate;
-    }
-
-    public LocalDateTime getInputStartDate() {
-        return inputStartDate;
-    }
-
-    public void setInputEndDate(LocalDateTime inputEndDate) {
-        this.inputEndDate = inputEndDate;
-    }
-    public LocalDateTime getInputEndDate(){
-        return inputEndDate;
+    public boolean getMultiDay(){
+        return multiDay;
     }
 }

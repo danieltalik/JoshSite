@@ -1,4 +1,4 @@
-package website;
+package website.Model;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

@@ -1,4 +1,6 @@
-package website;
+package website.DAO;
+
+import website.Model.Blog;
 
 import java.sql.*;
 import java.time.LocalDateTime;

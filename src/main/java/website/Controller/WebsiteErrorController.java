@@ -1,11 +1,11 @@
-package website.Error;
+package website.Controller;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import website.Login.User;
+import website.Model.User;
 
 import javax.servlet.http.HttpSession;
 import java.util.Objects;

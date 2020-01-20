@@ -1,6 +1,6 @@
-package website.Login;
+package website.DAO;
 
-import website.Blog;
+import website.Model.User;
 
 import java.sql.*;
 

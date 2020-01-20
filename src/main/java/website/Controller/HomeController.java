@@ -1,4 +1,4 @@
-package website;
+package website.Controller;
 
 
 import org.springframework.stereotype.Controller;
@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import website.Login.User;
+import website.Model.Blog;
+import website.DAO.BlogDAO;
+import website.Model.Event;
+import website.DAO.EventsDAO;
+import website.Model.User;
 
 import javax.servlet.http.HttpSession;
 import java.util.Objects;

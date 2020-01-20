@@ -1,4 +1,4 @@
-package website.Admin;
+package website.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import website.Blog;
-import website.BlogDAO;
-import website.Event;
-import website.Login.User;
-import website.Login.UserDAO;
+import website.Model.Blog;
+import website.DAO.BlogDAO;
+import website.Model.Event;
+import website.DAO.EventsDAO;
+import website.Model.User;
 
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
@@ -34,7 +34,7 @@ public class AdminController {
         String result = blogDAO.deleteBlogEntry(id);
         return new ModelAndView( "redirect:/"+result);
     }
-    @RequestMapping("addBlogPost")
+    @RequestMapping("/addBlogPost")
     public String addBlogPost(Model model, HttpSession session){
         setSession(model,session);
         Blog blog = new Blog();
@@ -49,12 +49,18 @@ public class AdminController {
         return new ModelAndView( "redirect:/");
     }
 
-    @RequestMapping("addEvent")
+    @RequestMapping("/addEvent")
     public String addEvent(Model model, HttpSession session){
         setSession(model,session);
         Event event = new Event();
 
         model.addAttribute("Event",event);
         return "addEvent";
+    }
+
+    @RequestMapping(value = "/submitEvent", method = RequestMethod.POST)
+    public ModelAndView blogAdd(@ModelAttribute Event event, Model model, HttpSession session){
+        String result = new EventsDAO().eventEntry(event);
+        return new ModelAndView( "redirect:/");
     }
 }
