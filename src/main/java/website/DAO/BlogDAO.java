@@ -1,5 +1,7 @@
 package website.DAO;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import website.Model.Blog;
 
 import java.sql.*;
@@ -7,31 +9,30 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlogDAO {
 
-    private final String url = "jdbc:postgresql://localhost:5432/JoshSite";
-    private final String user = "postgres";
-    private final String password = "password";
-    private final String allQuery = "SELECT * FROM blog ORDER BY blog_date DESC;";
-    private final String idQuery = "SELECT blog_date,blog_title,blog_content FROM blog WHERE blog_id = ?;";
-    private final String deleteQuery = "DELETE FROM blog WHERE blog_id = ?;";
-    private final String insertQuery = "INSERT INTO blog(blog_date,blog_title,blog_content) VALUES(?, ?, ?);";
+public class BlogDAO{
 
+    private ConnectionConfiguration config;
 
-    public Connection connection(){
-        Connection conn = null;
-        try{
-            conn = DriverManager.getConnection(url,user,password);
-        }catch (SQLException e){
-            e.getMessage();
-        } return conn;
+    @Value("${dao.allBlogPosts}")
+    private String allQuery;
+    @Value("${dao.blogById}")
+    private String idQuery;
+    @Value("${dao.deleteBlog}")
+    private String deleteQuery;
+    @Value("${dao.addBlog}")
+    private String insertQuery;
+
+    public BlogDAO(ConnectionConfiguration config){
+        this.config = config;
     }
+
     public List<Blog> allEntries(){
         List<Blog> blogPosts = new ArrayList<>();
 
         try {
-            connection();
-            Statement st = connection().createStatement();
+            config.connection();
+            Statement st = config.connection().createStatement();
             ResultSet rs = st.executeQuery(allQuery);
             while (rs.next()){
                 Blog blog = new Blog();
@@ -53,8 +54,8 @@ public class BlogDAO {
 
         Blog blog = new Blog();
         try {
-            connection();
-            PreparedStatement ps = connection().prepareStatement(idQuery);
+            config.connection();
+            PreparedStatement ps = config.connection().prepareStatement(idQuery);
             ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
@@ -70,8 +71,8 @@ public class BlogDAO {
     public String deleteBlogEntry(int id){
 
         try {
-            connection();
-            PreparedStatement ps = connection().prepareStatement(deleteQuery);
+            config.connection();
+            PreparedStatement ps = config.connection().prepareStatement(deleteQuery);
             ps.setInt(1,id);
             ps.executeUpdate();
 
@@ -87,8 +88,8 @@ public class BlogDAO {
         blog.setPostDate(Timestamp.valueOf(ldt));
 
         try {
-            connection();
-            PreparedStatement ps = connection().prepareStatement(insertQuery);
+            config.connection();
+            PreparedStatement ps = config.connection().prepareStatement(insertQuery);
             ps.setTimestamp(1,blog.getPostDate());
             ps.setString(2,blog.getTitle());
             ps.setString(3,blog.getContent());

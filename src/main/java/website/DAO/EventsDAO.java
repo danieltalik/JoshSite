@@ -1,5 +1,7 @@
 package website.DAO;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import website.Transformation.DateTransform;
 import website.Model.Event;
 
@@ -8,30 +10,30 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventsDAO {
-    private final String url = "jdbc:postgresql://localhost:5432/JoshSite";
-    private final String user = "postgres";
-    private final String password = "password";
-    private final String currentEventQuery = "SELECT * FROM events WHERE event_enddate > CURRENT_TIMESTAMP ORDER BY event_startDate ASC;";
-    private final String pastEventQuery = "SELECT * FROM events WHERE event_enddate < CURRENT_TIMESTAMP ORDER BY event_startDate ASC ;";
-    private final String removeEventQuery = "";
-    private final String addEvent = "INSERT INTO events(event_name,event_multiday,event_startdate,event_enddate,event_location,event_link) VALUES(?, ?, ?, ?, ?, ?);";
 
-    public Connection connection(){
-        Connection conn = null;
-        try{
-            conn = DriverManager.getConnection(url,user,password);
-        }catch (SQLException e){
-            e.getMessage();
-        } return conn;
+public class EventsDAO{
+
+    private ConnectionConfiguration config;
+
+    @Value("${dao.currentEventQuery}")
+    private String currentEventQuery;
+    @Value("${dao.pastEventQuery}")
+    private String pastEventQuery;
+    @Value("${dao.removeEventQuery}")
+    private String removeEventQuery;
+    @Value("${dao.addEvent}")
+    private String addEvent;
+
+    public EventsDAO(ConnectionConfiguration config){
+        this.config = config;
     }
+
     public List<Event> setPastEvent(){
         List<Event> events = new ArrayList<>();
 
-
         try {
-            connection();
-            Statement st = connection().createStatement();
+            config.connection();
+            Statement st = config.connection().createStatement();
             ResultSet rs = st.executeQuery(pastEventQuery);
             while (rs.next()){
                 Event event = new Event();
@@ -59,8 +61,8 @@ public class EventsDAO {
         List<Event> events = new ArrayList<>();
 
         try {
-            connection();
-            Statement st = connection().createStatement();
+            config.connection();
+            Statement st = config.connection().createStatement();
             ResultSet rs = st.executeQuery(currentEventQuery);
             while (rs.next()){
                 Event event = new Event();
@@ -99,8 +101,8 @@ public class EventsDAO {
 
 
         try {
-            connection();
-            PreparedStatement ps = connection().prepareStatement(addEvent);
+            config.connection();
+            PreparedStatement ps = config.connection().prepareStatement(addEvent);
             ps.setString(1,event.getName());
             ps.setBoolean(2,event.isMultiDay());
             ps.setTimestamp(3,isd);

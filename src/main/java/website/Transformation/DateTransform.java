@@ -22,7 +22,7 @@ public class DateTransform {
         int day = ldt.getDayOfMonth();
         String dayOfWeek = ldt.getDayOfWeek().toString().substring(0, 1) + ldt.getDayOfWeek().toString().substring(1).toLowerCase();
         int year = ldt.getYear();
-
+        //TODO: Find a library or other methodology to "AMERICANIZE" the hour
         if (hour == 0) {
             hour = 12;
             isAm = true;
@@ -35,8 +35,10 @@ public class DateTransform {
         } else formatMinute = Integer.toString(minute);
 
         if (multiDay) {
+            //TODO:This is GROSS and I hate it and it needs fixing
             startDate = dayOfWeek + space + month + space + day;
         } else {
+            //TODO:This is GROSS and I hate it and it needs fixing
             startDate = dayOfWeek + space + month + space + day + "th, " + year + space + "@" + space + hour + ":" + formatMinute + (isAm ? " A.M." : " P.M.");
         }
 
@@ -59,6 +61,7 @@ public class DateTransform {
         String dayOfWeek = ldt.getDayOfWeek().toString().substring(0, 1) + ldt.getDayOfWeek().toString().substring(1).toLowerCase();
         int year = ldt.getYear();
 
+        //TODO: Find a library or other methodology to "AMERICANIZE" the hour
         if (hour == 0) {
             hour = 12;
             isAm = true;
@@ -84,10 +87,12 @@ public class DateTransform {
             date = dateRange;
         } else date = startDate;
     }
-    public void setMultiDay(boolean multiDay){
+
+    public void setMultiDay(boolean multiDay) {
         this.multiDay = multiDay;
     }
-    public boolean getMultiDay(){
+
+    public boolean getMultiDay() {
         return multiDay;
     }
 }
