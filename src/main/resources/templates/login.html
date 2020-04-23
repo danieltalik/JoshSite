@@ -1,8 +1,6 @@
-<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Josh Decker</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -10,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="/CSS/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -20,14 +19,9 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-    $(document).ready(function(){
-        $('body').css('display', 'none');
-        $('body').fadeIn(350);
-    });
-    </script>
 </head>
 <body>
+<script src="JS/Scripting.js"></script>
 <header>
     <div>
         <a th:href="@{/}"/>
@@ -36,36 +30,18 @@
     <!--<h3 id="tagline">Classically Trained Music Instructor and Master of Funk</h3> -->
     <h3 id="tagline">Versatile Music Instructor and Voyaging Trumpeter</h3>
     <!-- Template for future Sign In and Sign Out Functionality -->
-
-    <nav>
-        <ul class="al">
-            <li class="hz">
-                <a th:href="@{/}">Home</a>
-            </li>
-            <li class="hz">
-                <a th:href="@{/bio}">Bio</a>
-            </li>
-            <li class="hz">
-                <a th:href="@{/events}">Events</a>
-            </li>
-            <li class="hz">
-                <a th:href="@{/teaching}">Teaching</a>
-            </li>
-            <li class="hz">
-                <a th:href="@{/blog}">Blog</a>
-            </li>
-            <li class="hz">
-                <a class="link" th:href="@{/lessons}">Lessons</a>
-            </li>
-            <li class="hz" th:if="${Visitor.loggedIn == true}">
-                <a th:href="@{/logout}">Log Out</a>
-            </li>
-            <!--<li class="hz">
-                <a th:href="@{/projects}">Projects</a>
-            </li>
-            -->
-        </ul>
-    </nav>
+    <div class="topnav" id="homeTopnav">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/bio}">Bio</a>
+        <a th:href="@{/events}">Events</a>
+        <a th:href="@{/teaching}">Teaching</a>
+        <a th:href="@{/blog}">Blog</a>
+        <a th:href="@{/lessons}">Lessons</a>
+        <a th:if="${Visitor.loggedIn == true}" th:href="@{/logout}">Log Out</a>
+        <a href="javascript:void(0);" class="icon" onclick="topBar()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
 </header>
 <!--<form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Password">
