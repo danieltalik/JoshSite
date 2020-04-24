@@ -76,6 +76,7 @@ public class HomeController {
     public String blogPost(@PathVariable int id, Model model, HttpSession session) {
         setSession(model, session);
         Blog blog = blogDAO.blogEntry(id);
+
         model.addAttribute("Blog", blog);
         model.addAttribute("Visitor", session.getAttribute("Visitor"));
         return "blogPost";

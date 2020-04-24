@@ -3,20 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="1aaa9e96-8f66-46b6-af7a-5c73993e4c0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/website/Controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/website/Controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/website/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/website/Controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/website/DAO/EventsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/website/DAO/EventsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/website/Model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/website/Model/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/website/Transformation/DateTransform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/website/Transformation/DateTransform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/JS/Scripting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/JS/Scripting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addBlogPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addBlogPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addEvent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blogPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blogPost.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/events.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/lessons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/lessons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pastEvents.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pastEvents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teaching.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teaching.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/JS/Scripting.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/JS/Scripting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/blogPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/blogPost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/events.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pastEvents.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pastEvents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/website/Controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/website/Controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/website/Controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/website/Controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/website/DAO/EventsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/website/DAO/EventsDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/website/Model/Blog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/website/Model/Blog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/website/Transformation/DateTransform.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/website/Transformation/DateTransform.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,54 +142,71 @@
       <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state x="404" y="94" key="#Main/0.23.1440.822@0.23.1440.822" timestamp="1587160347058" />
-    <state width="1398" height="214" key="GridCell.Tab.0.bottom" timestamp="1587662675147">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state width="1398" height="214" key="GridCell.Tab.0.bottom" timestamp="1587758901231">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1398" height="214" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1587161148426" />
+    <state width="1398" height="214" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1587758901231" />
     <state width="1398" height="214" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1587662675147" />
     <state width="1398" height="214" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1587655162803" />
     <state width="1398" height="214" key="GridCell.Tab.0.bottom/0.23.1440.828@0.23.1440.828" timestamp="1587661863302" />
-    <state width="1398" height="214" key="GridCell.Tab.0.center" timestamp="1587662675146">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state width="1398" height="214" key="GridCell.Tab.0.center" timestamp="1587758901230">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1398" height="214" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1587161148425" />
+    <state width="1398" height="214" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1587758901230" />
     <state width="1398" height="214" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1587662675146" />
     <state width="1398" height="214" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1587655162801" />
     <state width="1398" height="214" key="GridCell.Tab.0.center/0.23.1440.828@0.23.1440.828" timestamp="1587661863291" />
-    <state width="1398" height="214" key="GridCell.Tab.0.left" timestamp="1587662675145">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state width="1398" height="214" key="GridCell.Tab.0.left" timestamp="1587758901230">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1398" height="214" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1587161148424" />
+    <state width="1398" height="214" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1587758901230" />
     <state width="1398" height="214" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1587662675145" />
     <state width="1398" height="214" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1587655162800" />
     <state width="1398" height="214" key="GridCell.Tab.0.left/0.23.1440.828@0.23.1440.828" timestamp="1587661863290" />
-    <state width="1398" height="214" key="GridCell.Tab.0.right" timestamp="1587662675147">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state width="1398" height="214" key="GridCell.Tab.0.right" timestamp="1587758901231">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1398" height="214" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1587161148426" />
+    <state width="1398" height="214" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1587758901231" />
     <state width="1398" height="214" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1587662675147" />
     <state width="1398" height="214" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1587655162802" />
     <state width="1398" height="214" key="GridCell.Tab.0.right/0.23.1440.828@0.23.1440.828" timestamp="1587661863292" />
-    <state width="1398" height="214" key="GridCell.Tab.1.bottom" timestamp="1587652057828">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state width="1398" height="263" key="GridCell.Tab.1.bottom" timestamp="1587758901226">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
+    <state width="1398" height="263" key="GridCell.Tab.1.bottom/0.23.1440.825@0.23.1440.825" timestamp="1587758901226" />
     <state width="1398" height="214" key="GridCell.Tab.1.bottom/0.23.1440.827@0.23.1440.827" timestamp="1587652057828" />
-    <state width="1398" height="214" key="GridCell.Tab.1.center" timestamp="1587652057827">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state width="1398" height="263" key="GridCell.Tab.1.center" timestamp="1587758901226">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
+    <state width="1398" height="263" key="GridCell.Tab.1.center/0.23.1440.825@0.23.1440.825" timestamp="1587758901226" />
     <state width="1398" height="214" key="GridCell.Tab.1.center/0.23.1440.827@0.23.1440.827" timestamp="1587652057827" />
-    <state width="1398" height="214" key="GridCell.Tab.1.left" timestamp="1587652057827">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state width="1398" height="263" key="GridCell.Tab.1.left" timestamp="1587758901225">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
+    <state width="1398" height="263" key="GridCell.Tab.1.left/0.23.1440.825@0.23.1440.825" timestamp="1587758901225" />
     <state width="1398" height="214" key="GridCell.Tab.1.left/0.23.1440.827@0.23.1440.827" timestamp="1587652057827" />
-    <state width="1398" height="214" key="GridCell.Tab.1.right" timestamp="1587652057828">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state width="1398" height="263" key="GridCell.Tab.1.right" timestamp="1587758901226">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
+    <state width="1398" height="263" key="GridCell.Tab.1.right/0.23.1440.825@0.23.1440.825" timestamp="1587758901226" />
     <state width="1398" height="214" key="GridCell.Tab.1.right/0.23.1440.827@0.23.1440.827" timestamp="1587652057828" />
-    <state x="399" y="263" key="com.intellij.ide.util.TipDialog" timestamp="1587584884019">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state width="720" height="412" key="XDebugger.FullValuePopup" timestamp="1587749557490">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state width="720" height="412" key="XDebugger.FullValuePopup/0.23.1440.825@0.23.1440.825" timestamp="1587749557490" />
+    <state x="399" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1587741726885">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.822@0.23.1440.822" timestamp="1587584884019" />
+    <state x="399" y="264" key="com.intellij.ide.util.TipDialog/0.23.1440.825@0.23.1440.825" timestamp="1587741726885" />
+    <state x="288" y="178" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1587752051089">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state x="288" y="178" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1440.825@0.23.1440.825" timestamp="1587752051089" />
     <state x="378" y="196" width="683" height="476" key="find.popup" timestamp="1587651056570">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
@@ -191,24 +216,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/website/Controller/AdminController.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="49" />
+          <url>file://$PROJECT_DIR$/src/main/java/website/Controller/HomeController.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/website/DAO/EventsDAO.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/website/Controller/LoginController.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/website/DAO/EventsDAO.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="60" />
+          <line>124</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -49,6 +49,10 @@
         <h6 th:text="${Event.date}"></h6>
         <h6 th:text="${Event.location}"></h6>
         <h6 class="moreInfo"><a th:href="${Event.link}">More Info</a></h6>
+        <a th:href="@{'/deleteEvent/' + ${Event.id}}" onclick="return confirm('Are you sure you want to delete this event?');">
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"
+                    th:if="${Visitor.loggedIn == true}">Delete Event</button>
+        </a>
     </div>
 </th:block>
 </body>

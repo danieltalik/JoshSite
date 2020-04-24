@@ -23,6 +23,8 @@ public class EventsDAO{
     private String removeEventQuery;
     @Value("${dao.addEvent}")
     private String addEvent;
+    @Value("${dao.deleteEvent}")
+    private String deleteQuery;
 
     public EventsDAO(ConnectionConfiguration config){
         this.config = config;
@@ -115,5 +117,18 @@ public class EventsDAO{
             e.getMessage();
         }
         return "blog";
+    }
+    public String deleteEvent(int id){
+
+        try {
+            config.connection();
+            PreparedStatement ps = config.connection().prepareStatement(deleteQuery);
+            ps.setInt(1,id);
+            ps.executeUpdate();
+
+        }catch (SQLException e){
+            e.getMessage();
+        }
+        return "events";
     }
 }

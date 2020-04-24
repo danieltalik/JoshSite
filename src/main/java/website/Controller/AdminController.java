@@ -39,7 +39,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/deleteBlog/{id}")
-    public ModelAndView userAdd(@PathVariable int id, Model model, HttpSession session) {
+    public ModelAndView deleteBlog(@PathVariable int id, Model model, HttpSession session) {
         setSession(model, session);
         String result = blogDAO.deleteBlogEntry(id);
         return new ModelAndView("redirect:/" + result);
@@ -73,5 +73,11 @@ public class AdminController {
     public ModelAndView blogAdd(@ModelAttribute Event event, Model model, HttpSession session) {
         String result = eventsDAO.eventEntry(event);
         return new ModelAndView("redirect:/");
+    }
+    @RequestMapping(value = "/deleteEvent/{id}")
+    public ModelAndView deleteEvent(@PathVariable int id, Model model, HttpSession session) {
+        setSession(model, session);
+        String result = eventsDAO.deleteEvent(id);
+        return new ModelAndView("redirect:/" + result);
     }
 }

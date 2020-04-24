@@ -20,3 +20,12 @@ function topBar() {
         $('body').css('display', 'none');
         $('body').fadeIn(350);
     });
+
+function areYouSure() {
+  var sure = confirm("Are you sure you want to delete this?")
+  if(sure==true){
+
+
+
+  }
+}
